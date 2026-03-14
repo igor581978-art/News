@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body onclick="run()">
+    <script>
+        const urls = [
+            'https://www.youtube.com/@d.yelisevych/videos',
+            'https://www.youtube.com/@Taras_Lawyer/videos',
+            'https://www.youtube.com/@DubinizmTV',
+            'https://tinyurl.com/4sytecma',
+            'https://www.youtube.com/@LISOVSKIY_NEWS/videos',
+            'https://tinyurl.com/57en7fvu',
+            'https://www.youtube.com/@shelestSHUM/videos'
+        ];
+
+        function run() {
+            urls.forEach((url, i) => {
+                setTimeout(() => { window.open(url, '_blank'); }, i * 250);
+            });
+            // Пытаемся закрыться. Если не даст — страница останется пустой и белой.
+            setTimeout(() => { window.close(); }, urls.length * 250 + 500);
+        }
+
+        // Запуск при загрузке
+        window.onload = run;
+    </script>
+</body>
+</html>
